@@ -8,14 +8,14 @@ const bodyParser    = require("body-parser");
 const app           = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static("public")); //look up the public folder and use the materials inside of that
 
 // The in-memory database of tweets. It's a basic object with an array in it.
 const db = require("./lib/in-memory-db");
 
 // The `data-helpers` module provides an interface to the database of tweets.
 // This simple interface layer has a big benefit: we could switch out the
-// actual database it uses and see little to no changes elsewhere in the code
+// actual database, it uses and see little to no changes elsewhere in the code
 // (hint hint).
 //
 // Because it exports a function that expects the `db` as a parameter, we can
