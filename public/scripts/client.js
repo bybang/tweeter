@@ -32,18 +32,19 @@ const data = [
 ]
 
 const renderTweets = function(tweets) {
+  const $tweetContainer = $('.tweets-container');
+  $tweetContainer.empty();
+  for (tweet of tweets) {
+    const $tweet = createTweetElement(tweet)
+    $tweetContainer.prepend($tweet);
+  } 
 // loops through tweets
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
 }
 
-const createTweetElement = function(tweet) {
-let $tweet /* Your code for creating the tweet element */
-// ...
-return $tweet;
-}
-
 const createTweetElement = (tweetObject) => {
+  const $tweet = $('<article>').addClass('tweetArticle');
   const tweetHTML = `
   <article class="tweet">
     <header>
@@ -60,7 +61,11 @@ const createTweetElement = (tweetObject) => {
       </span>
     </footer>
   </article>`;
-  return tweetHTML;
+
+  console.log(html)
+  console.log(timeago.format(tweetData.created_at))
+  $tweet.append(tweetHTML);
+  return $tweet;
 }
 
 renderTweets(data);
