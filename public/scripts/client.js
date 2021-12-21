@@ -86,6 +86,31 @@ $form.submit(function(event) {
   //   console.log(serializedData);
   //   console.log(response);
   // })
+});
 
-})
+const loadTweets = () => {
+  $.ajax({
+    url:'/tweets',
+    method: 'GET',
+    dataType: 'JSON',
+  })
+};
+
+// const fetchBlogs = () => {
+//   $.ajax({
+//     url: '/api/blogs',
+//     method: 'GET',
+//     dataType: 'json',
+//     success: (blogs) => {
+//       console.log("data", blogs);
+//       createBlogs(blogs);
+//     },
+//     error: (err) => {
+//       console.log(`error: ${err}`)
+//     } 
+//   });
+// };
+
+// fetchBlogs();
+
 });
