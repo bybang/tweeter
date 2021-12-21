@@ -31,10 +31,34 @@ const data = [
   }
 ]
 
+
+const createTweetElement = (newTweet) => {
+  const $tweet = $('<article>').addClass('tweetArticle');
+  const tweetHTML = `
+  <article class="tweet">
+    <header>
+      <img src="${newTweet.user.avatars}"> <h4>${newTweet.user.name}</h4>
+     <span class="userID"> ${newTweet.user.handle} </span>
+    </header>
+    <article class="innerTweet">
+      <p>${newTweet.content.text}</p>
+    </article>
+    <footer>
+    ${timeago.format(newTweet.created_at)}
+      <span>
+        <i class="fas fa-flag"></i> <i class="fas fa-retweet"></i> <i class="fas fa-heart"></i>
+      </span>
+    </footer>
+  </article>`;
+  
+  $tweet.append(tweetHTML);
+  return $tweet;
+}
+
 const renderTweets = function(tweets) {
-  const $tweetContainer = $('.tweets-container');
+  const $tweetContainer = $('#tweets-container');
   $tweetContainer.empty();
-  for (tweet of tweets) {
+  for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet)
     $tweetContainer.prepend($tweet);
   } 
@@ -43,31 +67,14 @@ const renderTweets = function(tweets) {
 // takes return value and appends it to the tweets container
 }
 
-const createTweetElement = (tweetObject) => {
-  const $tweet = $('<article>').addClass('tweetArticle');
-  const tweetHTML = `
-  <article class="tweet">
-    <header>
-      <img src="${tweetObject.user.avatars}"> <h4>${tweetObject.user.name}</h4>
-      <span class="userID"> ${tweetObject.user.handle} </span>
-    </header>
-    <article class="innerTweet">
-      <p>${tweetObject.content.text}</p>
-    </article>
-    <footer>
-    ${timeago.format(tweetObject.created_at)}
-      <span>
-        <i class="fas fa-flag"></i> <i class="fas fa-retweet"></i> <i class="fas fa-heart"></i>
-      </span>
-    </footer>
-  </article>`;
-
-  console.log(html)
-  console.log(timeago.format(tweetData.created_at))
-  $tweet.append(tweetHTML);
-  return $tweet;
-}
-
 renderTweets(data);
 
+const $form = $('#submit-new-tweet');
+
+$form.submit(function(event) {
+  console.log(event);
+  event.preventDefault();
+  const serializedData = $(this).serialize();
+  // console.log(serializedData);
+})
 });
