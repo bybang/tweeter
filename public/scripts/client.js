@@ -72,9 +72,20 @@ renderTweets(data);
 const $form = $('#submit-new-tweet');
 
 $form.submit(function(event) {
-  console.log(event);
+  // console.log(event);
   event.preventDefault();
   const serializedData = $(this).serialize();
-  // console.log(serializedData);
+
+  $.ajax({
+    type: 'POST',
+    url: '/tweets',
+    data: serializedData,
+  });
+  
+  // $.post('/tweets', serializedData, (response) => {
+  //   console.log(serializedData);
+  //   console.log(response);
+  // })
+
 })
 });
