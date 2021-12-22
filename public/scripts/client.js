@@ -5,53 +5,6 @@
  */
 $(document).ready(() => {
 
-const $form = $('#submit-new-tweet');
-
-$form.submit(function(event) {
-  event.preventDefault();
-  const serializedData = $(this).serialize();
-  $.post('/tweets', serializedData)
-});
-
-const loadTweets = () => {
-  $.ajax({
-    url:'/tweets',
-    method: 'GET',
-    dataType: 'JSON',
-  })
-  .then(function(tweets) {
-    renderTweets(tweets);
-  })
-};
-
-loadTweets()
-
-// Fake data taken from initial-tweets.json
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
-
 const createTweetElement = (newTweet) => {
   const $tweet = $('<article>').addClass('tweetArticle');
   const tweetHTML = `
@@ -73,7 +26,7 @@ const createTweetElement = (newTweet) => {
   
   $tweet.append(tweetHTML);
   return $tweet;
-}
+};
 
 const renderTweets = function(tweets) {
   const $tweetContainer = $('#tweets-container');
@@ -83,5 +36,36 @@ const renderTweets = function(tweets) {
     $tweetContainer.prepend($tweet); // takes return value and appends it to the tweets container
   }
 };
+
+const $form = $('#submit-new-tweet');
+
+$form.submit(function(event) {
+  event.preventDefault();
+  const serializedData = $(this).serialize();
+
+  const $tweetText = $('#tweet-text').val();
+  if ($tweetText === "") {
+    alert("There's no input! Please enter the text here")
+  };
+  if ($tweetText.length > 140) {
+    alert("Limit exceeded! Please enter under 140 characters")
+  };
+
+  $.post('/tweets', serializedData)
+  // loadTweets();
+});
+
+const loadTweets = () => {
+  $.ajax({
+    url:'/tweets',
+    method: 'GET',
+    dataType: 'JSON',
+  })
+  .then(function(tweets) {
+    renderTweets(tweets);
+  })
+};
+
+loadTweets();
 
 });
