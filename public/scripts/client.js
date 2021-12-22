@@ -52,7 +52,7 @@ $form.submit(function(event) {
   };
 
   $.post('/tweets', serializedData)
-  // loadTweets();
+  loadTweets();
 });
 
 const loadTweets = () => {
