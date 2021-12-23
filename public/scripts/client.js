@@ -5,6 +5,12 @@
  */
 $(document).ready(() => {
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweetElement = (newTweet) => {
   const $tweet = $('<article>').addClass('tweetArticle');
   const tweetHTML = `
@@ -14,7 +20,7 @@ const createTweetElement = (newTweet) => {
      <span class="userID"> ${newTweet.user.handle} </span>
     </header>
     <article class="innerTweet">
-      <p>${newTweet.content.text}</p>
+      <p>${escape(newTweet.content.text)}</p>
     </article>
     <footer>
     ${timeago.format(newTweet.created_at)}
@@ -23,7 +29,7 @@ const createTweetElement = (newTweet) => {
       </span>
     </footer>
   </article>`;
-  
+
   $tweet.append(tweetHTML);
   return $tweet;
 };
@@ -38,20 +44,25 @@ const renderTweets = function(tweets) {
 };
 
 const $form = $('#submit-new-tweet');
+const $error = $('.error-container');
+$error.hide();
 
 $form.submit(function(event) {
   event.preventDefault();
   const serializedData = $(this).serialize();
-
+  
   const $tweetText = $('#tweet-text').val();
   if ($tweetText === "") {
-    alert("There's no input! Please enter the text here")
+    $('#error').text(" There's no input! Please enter the text here ")
+    $error.slideDown();
   };
   if ($tweetText.length > 140) {
-    alert("Limit exceeded! Please enter under 140 characters")
+    $('#error').text(" Limit exceeded! Please enter under 140 characters ")
+    $error.slideDown();
   };
 
   $.post('/tweets', serializedData)
+
   loadTweets();
 });
 
