@@ -54,12 +54,11 @@ $form.submit(function(event) {
   const $tweetText = $('#tweet-text').val();
   if ($tweetText === "") {
     $('#error').text(" There's no input! Please enter the text here ")
-    $error.slideDown();
+    return $error.slideDown().delay(3000).slideUp(400);
   };
   if ($tweetText.length > 140) {
     $('#error').text(" Limit exceeded! Please enter under 140 characters ")
-    $error.slideDown();
-    $error.slideUp();
+    return $error.slideDown().delay(3000).slideUp(400);
   };
 
   $.post('/tweets', serializedData)
