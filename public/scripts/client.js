@@ -59,6 +59,7 @@ $form.submit(function(event) {
   if ($tweetText.length > 140) {
     $('#error').text(" Limit exceeded! Please enter under 140 characters ")
     $error.slideDown();
+    $error.slideUp();
   };
 
   $.post('/tweets', serializedData)
