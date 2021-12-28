@@ -50,3 +50,13 @@ button {
   color: red;
   font-size: 24px;
 }
+
+@media screen and (min-width: 1024px) {
+  .new-tweet {
+    display: flex;
+    margin-top: 8em;
+  }
+  #submit-new-tweet {
+    margin-left: -1em;
+  }
+}

@@ -25,15 +25,23 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- .container {
-   display: flex;
-   flex-direction: column;
-   width: 90%;
-   align-items: center;
-   background-color: #f4f1ec;
-   margin: auto;
- }
- /* 
- o o o
- o
- o */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  background-color: #f4f1ec;
+  margin: auto;
+}
+
+@media (min-width: 1024px) {
+  .container{
+    display: flex;
+    align-items: flex-start;
+    margin-left: 2em;
+  }
+  #tweets-container {
+    width: 67%;
+  }
+}
+

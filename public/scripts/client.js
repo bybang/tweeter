@@ -53,7 +53,7 @@ $form.submit(function(event) {
   
   const $tweetText = $('#tweet-text').val();
   if ($tweetText === "") {
-    $('#error').text(" There's no input! Please enter the text here ")
+    $('#error').text(" There's no input! Please enter the text below ")
     return $error.slideDown().delay(3000).slideUp(400);
   };
   if ($tweetText.length > 140) {
