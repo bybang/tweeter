@@ -45,6 +45,9 @@ const renderTweets = function(tweets) {
 
 const $form = $('#submit-new-tweet');
 const $error = $('.error-container');
+const $toggle = $('.arrow-button')
+
+$form.hide();
 $error.hide();
 
 $form.submit(function(event) {
@@ -66,6 +69,10 @@ $form.submit(function(event) {
   loadTweets();
 });
 
+$toggle.click(function() {
+  $form.slideToggle(); 
+})
+
 const loadTweets = () => {
   $.ajax({
     url:'/tweets',
@@ -78,5 +85,6 @@ const loadTweets = () => {
 };
 
 loadTweets();
+
 
 });

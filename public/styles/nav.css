@@ -25,19 +25,20 @@ nav {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.button {
+.arrow-button {
   color: red;
   display:flex;
   justify-content: center;
   background-color: #e66400;
   border: none;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1024px) {
   nav {
     background-color: #4056A1
   }
-  .button {
+  .arrow-button {
     background-color: #4056A1;
   }
 }

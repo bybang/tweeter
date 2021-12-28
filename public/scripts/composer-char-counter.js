@@ -13,6 +13,7 @@ $(document).ready(() => {
     } else if (currentLength >= 0) {
       $counter.removeClass('redWarning');
     }
+
   })
   // $form.on('input', (e) => {
   //   let inputLength = e.target.value.length; >> (react way)
