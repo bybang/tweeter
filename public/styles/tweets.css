@@ -44,5 +44,6 @@ article.innerTweet {
 
 .tweet footer span i:hover {
   opacity: 50%;
+  color: #E2EB98;
   cursor: pointer;
 }

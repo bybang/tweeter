@@ -8,6 +8,7 @@ nav {
   width: 100%;
   color: #FFFFFF;
   background-color: #e66400;
+  background-image: url("https://www.transparenttextures.com/patterns/robots.png");
   padding: 1.5em;
   justify-content: space-between;
   position: fixed;
@@ -36,7 +37,8 @@ nav {
 
 @media only screen and (min-width: 1024px) {
   nav {
-    background-color: #4056A1
+    background-color: #4056A1;
+    background-image: none;
   }
   .arrow-button {
     background-color: #4056A1;
