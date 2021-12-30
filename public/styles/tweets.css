@@ -35,7 +35,7 @@ article.innerTweet {
   border-bottom-style: solid;
 }
 
-.tweet footer {
+.tweet > footer {
   display: flex;
   justify-content: space-between;
   font-size: 0.7em;
