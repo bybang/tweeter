@@ -1,3 +1,8 @@
+$font-stack: 'Bungee', sans-serif;
+$font-default: 'Source Sans Pro', sans-serif;
+$primary-color: #e66400;
+$mobile-color: #4056A1;
+
 nav {
   display: flex;
   flex-direction: row;
@@ -7,7 +12,7 @@ nav {
   left: 0;
   width: 100%;
   color: #FFFFFF;
-  background-color: #e66400;
+  background-color: $primary-color;
   background-image: url("https://www.transparenttextures.com/patterns/robots.png");
   padding: 1.5em;
   justify-content: space-between;
@@ -15,7 +20,7 @@ nav {
 }
 
 .logo > span {
-  font-family: "Bungee", sans-serif;
+  font-family: $font-stack;
   font-size: 2em;
 }
 
@@ -23,26 +28,25 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  font: "Source Sans Pro", sans-serif;
+  font: $font-default;
 }
 
 .arrow-button {
   color: red;
-  display: flex;
+  display:flex;
   justify-content: center;
-  background-color: #e66400;
+  background-color: $primary-color;
   border: none;
   cursor: pointer;
 }
 
 @media only screen and (min-width: 1024px) {
   nav {
-    background-color: #4056A1;
+    background-color: $mobile-color;
     background-image: none;
   }
-
   .arrow-button {
-    background-color: #4056A1;
+    background-color: $mobile-color;
   }
 }
 /* Full width of the viewport

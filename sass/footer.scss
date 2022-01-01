@@ -1,3 +1,5 @@
+$warning-color: red;
+
 .scroll-up {
   border: none;
   background-color: transparent;
@@ -9,5 +11,5 @@
 }
 
 .scroll-up > i {
-  color: red;
+  color: $warning-color;
 }

@@ -1,5 +1,11 @@
+$font-default: 'Source Sans Pro', sans-serif;
+$font-stack: 'Bungee', sans-serif;
+$warning-color: red;
+$mobile-color: #4056A1;
+
+
 .new-tweet {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: $font-default;
   font-size: 24px;
   padding-bottom: 1em;
   width: 100%;
@@ -14,7 +20,7 @@
 }
 
 .redWarning {
-  color: red;
+  color: $warning-color
 }
 
 .new-tweet textarea::placeholder {
@@ -26,12 +32,12 @@
 .submitbtn {
   display: flex;
   justify-content: space-between;
-  font-family: "Bungee", sans-serif;
+  font-family: $font-stack;
   font-size: 1em;
 }
 
 .tweet-btn {
-  background-color: #4056A1;
+  background-color: $mobile-color;
   color: white;
   cursor: pointer;
 }
@@ -50,6 +56,6 @@
 }
 
 .error-container > i {
-  color: red;
+  color: $warning-color;
   font-size: 24px;
 }

@@ -46,9 +46,11 @@ const renderTweets = function(tweets) {
 const $form = $('#submit-new-tweet');
 const $error = $('.error-container');
 const $toggle = $('.arrow-button')
+const $top = $('.scroll-up')
 
 $form.hide();
 $error.hide();
+$top.hide();
 
 $form.submit(function(event) {
   event.preventDefault();
@@ -71,6 +73,18 @@ $form.submit(function(event) {
 
 $toggle.click(function() {
   $form.slideToggle(); 
+})
+
+$top.click(function() {
+  $(window).scrollTop(0);
+})
+
+$(window).scroll(function() {
+  if($(this).scrollTop() === 0) {
+    $top.fadeOut(200);
+  } else {
+    $top.fadeIn(50);
+  }
 })
 
 const loadTweets = () => {

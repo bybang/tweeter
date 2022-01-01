@@ -2,6 +2,10 @@
 The avatar should be centered vertically and horizontally (Hint: the justify-content and align-items properties are helpful for centering things if you're using Flexbox.)
 The name should be centered below the avatar
 The background-color should be a different colour than the nav and the body */
+$primary-color: #e66400;
+$mobile-color: #4056A1;
+$font-default: 'Source Sans Pro', sans-serif;
+
 .profile {
   margin-top: 120px;
   width: 100%;
@@ -10,7 +14,7 @@ The background-color should be a different colour than the nav and the body */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #e66400;
+  background-color: $primary-color;
   background-image: url("https://www.transparenttextures.com/patterns/robots.png");
 }
 
@@ -19,7 +23,7 @@ The background-color should be a different colour than the nav and the body */
 }
 
 .profile > div > h2 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: $font-default;
   font-style: italic;
   font-weight: bold;
   color: white;
