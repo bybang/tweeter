@@ -16,3 +16,27 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- body parser
+- chance
+- md5
+
+## Features
+
+> ### *Tweet Composer Toggle form*
+> Prevent accident tweets by hiding the submit form. Users can toggle the submit form anytime!
+![Toggle Form](https://user-images.githubusercontent.com/85023116/147876803-072aa5b5-b0be-4a07-9ef1-55763bbc3aaa.gif)
+
+> ### *New Tweet*
+> If user tweets, the app gives a random character icon, ID and the time when they posted
+![New Tweet](https://user-images.githubusercontent.com/85023116/147877198-6faf5ac8-137d-4690-99a7-33ce07848fbe.gif)
+
+> ### *Errors*
+> The app has character limits! If the user type over 140, the letter counter goes negative and will prevent tweet action
+![Error Handler - 1](https://user-images.githubusercontent.com/85023116/147877286-bc1e133f-f94d-4438-a99e-87ea9798e5d0.gif)
+
+> If the user tries to submit an empty tweet, the app will prevent tweet action
+![Error Handler - 2](https://user-images.githubusercontent.com/85023116/147877304-ccfc0616-fb87-4caa-acb4-3ee6ac45e39b.gif)
+
+> ### *Responsive Design*
+> The app supports mobile devices! Enjoy tweet app with your phone, tablet and PC
+![Responsive Design](https://user-images.githubusercontent.com/85023116/147877340-66069ea1-bb08-46ef-bce8-158b971f0e42.gif)
