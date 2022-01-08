@@ -47,6 +47,7 @@ const $form = $('#submit-new-tweet');
 const $error = $('.error-container');
 const $toggle = $('.arrow-button')
 const $top = $('.scroll-up')
+const $counter = $('.counter')
 
 $form.hide();
 $error.hide();
@@ -68,7 +69,12 @@ $form.submit(function(event) {
 
   $.post('/tweets', serializedData)
 
-  loadTweets();
+  .then(() => {
+    $counter.val(140);
+    $('#tweet-text').val("");
+    loadTweets();
+    }
+  )
 });
 
 $toggle.click(function() {
