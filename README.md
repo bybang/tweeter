@@ -28,7 +28,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 > ### *New Tweet*
 > If user tweets, the app gives a random character icon, ID and the time when they posted
-![New Tweet](https://user-images.githubusercontent.com/85023116/147877198-6faf5ac8-137d-4690-99a7-33ce07848fbe.gif)
+![New tweet](https://user-images.githubusercontent.com/85023116/148654924-9cd1eb47-6c1b-4ae5-994a-f22d68b18056.gif)
 
 > ### *Errors*
 > The app has character limits! If the user type over 140, the letter counter goes negative and will prevent tweet action
